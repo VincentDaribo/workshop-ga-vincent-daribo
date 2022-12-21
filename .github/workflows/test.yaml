@@ -17,7 +17,5 @@ jobs:
     runs-on: epitechcontent/epitest-docker
     steps:
       - uses: actions/checkout@v3
-      - name: tests 
-        run:  "make tests_run"
-      - name: coverage 
-        run:  "make coverage"
+      - run:  make tests_run
+      - run:  make coverage
