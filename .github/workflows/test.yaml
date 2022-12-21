@@ -15,7 +15,7 @@ jobs:
   unit-test:
     name: "unit-test"
     runs-on: epitechcontent/epitest-docker
-    - uses: actions/checkout@v3
+    # - uses: actions/checkout@v3
     steps:
       - name: tests 
         run:  "make tests_run"
