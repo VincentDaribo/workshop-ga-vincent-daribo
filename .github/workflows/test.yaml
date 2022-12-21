@@ -20,12 +20,16 @@ jobs:
       - uses: actions/checkout@v3
       - name: run test
         run: make tests_run > coverage_outputs
+
       - name: run test
         run: make coverage  >> coverage_outputs
+      
       - name: create arifact
         run: mkdir -p ./artifacts
+
       - name: copy coverage
         run: cp coverage_outputs  ./artifacts/coverage_outputs
+        if: always()
       - uses: actions/upload-artifact@v3
         with:
           name: coverage_outputs
