@@ -8,4 +8,5 @@ jobs:
   hellow-world:
     name: "hello world"
     runs-on: ubuntu-20.04
-    run:  "echo Welcome to the Github Actions workshop !"
+    steps:
+      run:  "echo Welcome to the Github Actions workshop !"
