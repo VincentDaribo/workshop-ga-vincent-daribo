@@ -34,3 +34,20 @@ jobs:
         with:
           name: coverage_outputs
           path: ./artifacts/coverage_outputs
+
+      - name: run functionnal tests
+        run: make && ./functionnal-test.sh > function-tests_outputs
+     
+      - name: create functionnal tests artifact
+        run: mkdir -p ./artifacts
+
+      - name: copy functionnal tests
+        run: cp function-tests_outputs  ./artifacts/function-tests_outputs
+        if: always()
+      - uses: actions/upload-artifact@v3
+        with:
+          name: function-tests_outputs
+          path: ./artifacts/function-tests_outputs
+
+
+      
