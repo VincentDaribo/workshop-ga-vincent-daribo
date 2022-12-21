@@ -18,5 +18,14 @@ jobs:
     container: docker://epitechcontent/epitest-docker
     steps:
       - uses: actions/checkout@v3
-      - run:  make tests_run
-      - run:  make coverage
+      - name: run test
+        run: make tests_run > coverage_outputs
+      - name: run test
+        run: make coverage  >> coverage_outputs
+      - name: create arifact
+        run: mkdir -p ./artifacts
+        run: cp coverage_outputs  ./artifacts/coverage_outputs
+      - uses: actions/upload-artifact@v3
+        with:
+          name: coverage_outputs
+          path: ./artifacts/coverage_outputs
