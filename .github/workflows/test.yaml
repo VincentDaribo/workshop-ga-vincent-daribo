@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Print 
         run:  "echo Welcome to the Github Actions workshop !"
-  unit-test:
+  unit_test:
     name: unit-test
     runs-on: epitechcontent/epitest-docker
     - uses: actions/checkout@v3
