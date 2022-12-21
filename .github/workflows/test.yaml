@@ -14,7 +14,8 @@ jobs:
   
   unit-test:
     name: "unit-test"
-    runs-on: epitechcontent/epitest-docker
+    runs-on: ubuntu-20.04
+    container: docker://epitechcontent/epitest-docker
     steps:
       - uses: actions/checkout@v3
       - run:  make tests_run
