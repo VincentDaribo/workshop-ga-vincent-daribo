@@ -24,6 +24,7 @@ jobs:
         run: make coverage  >> coverage_outputs
       - name: create arifact
         run: mkdir -p ./artifacts
+      - name: copy coverage
         run: cp coverage_outputs  ./artifacts/coverage_outputs
       - uses: actions/upload-artifact@v3
         with:
